@@ -3,9 +3,8 @@ package org.stepik.kafka.fraud_detection
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
-@SpringBootApplication
-class FraudDetectionApplication
+@SpringBootApplication class FraudDetectionApplication
 
 fun main(args: Array<String>) {
-	runApplication<FraudDetectionApplication>(*args)
+  runApplication<FraudDetectionApplication>(*args)
 }

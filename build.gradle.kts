@@ -4,6 +4,8 @@ plugins {
 	id("org.springframework.boot") version "4.0.0"
 	id("io.spring.dependency-management") version "1.1.7"
 	kotlin("plugin.jpa") version "2.2.21"
+
+	id("com.diffplug.spotless") version "8.1.0"
 }
 
 group = "org.stepik.kafka"
@@ -67,4 +69,10 @@ tasks.withType<Test> {
 
 tasks.bootBuildImage {
 	runImage = "paketobuildpacks/ubuntu-noble-run:latest"
+}
+
+spotless {
+	kotlin {
+		ktfmt()    // has its own section below
+	}
 }
