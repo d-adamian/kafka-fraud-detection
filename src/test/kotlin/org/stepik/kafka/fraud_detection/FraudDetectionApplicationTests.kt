@@ -8,7 +8,8 @@ import org.springframework.context.annotation.Import
 @SpringBootTest
 class FraudDetectionApplicationTests {
 
-  @Test fun contextLoads() {
-    System.out.println("Test");
+  @Test
+  fun contextLoads() {
+    System.out.println("Test")
   }
 }
