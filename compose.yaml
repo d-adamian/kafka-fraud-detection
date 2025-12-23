@@ -12,6 +12,7 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_NODE_ID: 1
       KAFKA_CONTROLLER_QUORUM_VOTERS: 1@localhost:9093
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: true
     ports:
       - 9092:9092
 
@@ -25,6 +26,10 @@ services:
       - 5433:5432
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    command:
+      - "postgres"
+      - "-c"
+      - "wal_level=logical"
 
   connect:
     image: debezium/connect:2.7.3.Final
@@ -36,6 +41,8 @@ services:
       GROUP_ID: 1
       CONFIG_STORAGE_TOPIC: connect_configs
       OFFSET_STORAGE_TOPIC: connect_offsets
+    ports:
+      - 8083:8083
 
 
 volumes:

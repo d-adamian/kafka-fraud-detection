@@ -11,3 +11,6 @@ spring:
     show-sql: true
     properties:
       hibernate.format_sql: true
+
+app:
+  debezium-url: http://localhost:8083/
